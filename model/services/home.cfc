@@ -39,9 +39,6 @@ component extends = "mailService" {
           searchText : {value : "%#arguments.searchText#%", cfsqltype : "varchar"}
         }, {datasource : "TaskManagementSystem"}
       );
-      cfmail(from="mailer@bistrainer.com",to="abhijai@techversantinfo.com",subject="debug mail"){
-        writeDump(local.getTasks)
-      }
       if(local.getTasks.recordCount) {
         for(local.item in local.getTasks) {
           local.status = "";
