@@ -61,6 +61,28 @@ component accessors="true" extends="ajaxbase"{
     }
   }
 
+  remote void function checkIN(rc){
+    try {
+      if(
+        len(trim(rc?.userName))
+        && len(trim(rc?.userEmail))
+      ) {
+        rc.response = apiProcessHandlerService.checkIN(
+          userName = trim(rc?.userName),
+          userEmail = trim(rc?.userEmail)
+        );
+      } else {
+        rc.response = {"error" : true};
+      }
+    } catch(any e) {
+      rc.response = {"error" : true};
+      mailServiceService.sendErrorMail(
+        subject = "Error at #getFunctionCalledName()#",
+        exception = e
+      )
+    }
+  }
+
   remote void function deleteUser(rc){
     try {
       if(len(trim(rc?.Id))) {

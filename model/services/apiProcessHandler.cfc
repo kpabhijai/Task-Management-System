@@ -121,4 +121,27 @@ component extends = "mailService" {
     }
     return local.result;
   }
+
+  public struct function checkIN(
+    required string userName,
+    required string userEmail
+  ) {
+    local.result = {"error" : false};
+    try {
+      if(isValid("email", arguments.userEmail)) {
+        session["Auth"] = true;
+        session["userName"] = arguments.userName
+        session["userEmail"] = arguments.userEmail
+      } else {
+        local.result.error = "true";
+      }
+    } catch (any e) {
+      local.result.error = "true";
+      sendErrorMail(
+        subject = "Error at #getFunctionCalledName()#",
+        exception = e
+      );
+    }
+    return local.result;
+  }
 }

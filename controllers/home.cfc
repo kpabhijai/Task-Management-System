@@ -31,4 +31,7 @@ component accessors="true" {
     rc.userList = homeservice.getUserList().userList;
     rc.taskStatusList = homeservice.getTaskStatus().status;
   }
+
+  public void function userDetails( rc ) {
+  }
 }
