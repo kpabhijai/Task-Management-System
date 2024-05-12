@@ -34,4 +34,8 @@ component accessors="true" {
 
   public void function userDetails( rc ) {
   }
+
+  public void function logOut( rc ) {
+    structClear(session);
+  }
 }

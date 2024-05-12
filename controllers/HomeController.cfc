@@ -1,6 +1,6 @@
 component accessors="true" {
 
   function redirectToTaskList() {
-    location(url="index.cfm?action=home.tasklist");
+    location(url="index.cfm?action=home.tasklist", addtoken = "false");
   }
 }

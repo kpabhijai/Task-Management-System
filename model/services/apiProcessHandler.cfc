@@ -132,6 +132,7 @@ component extends = "mailService" {
         session["Auth"] = true;
         session["userName"] = arguments.userName
         session["userEmail"] = arguments.userEmail
+        local.result["Auth"] = true
       } else {
         local.result.error = "true";
       }

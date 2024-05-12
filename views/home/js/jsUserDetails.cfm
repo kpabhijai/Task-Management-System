@@ -3,8 +3,10 @@
     function checkIN() {
       var userName = $("##userName").val();
       var userEmail = $("##userEmail").val();
-      if(id) {
-        alert("The User will be deleted.")
+      if(
+        userName
+        && userEmail
+      ) {
         $.ajax({
           type: "post",
           url	: "#buildUrl("ajaxProcessHandler.checkIN")#&userName=" + userName + "&userEmail=" + userEmail,
@@ -14,6 +16,10 @@
             }
           }
         });
+      } else {
+        $("##errorMsg").text("Invalid user details.");
+        $('##errorMsg').addClass('text-danger');
+        $('##errorMsg').removeClass('text-success');
       }
     }
   </script>

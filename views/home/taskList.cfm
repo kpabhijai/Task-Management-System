@@ -1,5 +1,18 @@
 <cfinclude template = "./css/cssTaskList.cfm">
 <cfinclude template = "./js/jsTaskList.cfm">
+<cfscript>
+  if(
+    !(
+      structKeyExists(session, "Auth")
+      || len(trim(session?.userName))
+    ) && !url.action == "home.userDetails"
+  ){
+    location(
+      url = "/index.cfm?action=home.userDetails",
+      addtoken = "no"
+    );
+  }
+</cfscript>
 <cfoutput>
   <div class="col-xs-12 m-3 d-flex">
     <div class="">

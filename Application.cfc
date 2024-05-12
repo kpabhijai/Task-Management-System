@@ -1,11 +1,8 @@
 component extends="framework.one" {
 
-	/*
-		This is provided for illustration only - YOU SHOULD NOT USE THIS IN
-		A REAL PROGRAM! ONLY SPECIFY THE DEFAULTS YOU NEED TO CHANGE!*/
-
   this.name = "taskManagementSystem";
   this.sessionManagement = "Yes";
+  this.sessionTimeout = createTimeSpan(0, 0, 30, 0);
 
 	function setupRequest() {
 		// use setupRequest to do initialization per request
