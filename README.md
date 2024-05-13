@@ -1,5 +1,7 @@
 # Task-Management-System
 
+This Project follows FW1 (MVC) framework
+
 Environment Setup
 
 1) Clone the branch in a directory.
