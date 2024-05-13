@@ -11,6 +11,7 @@ component accessors="true" {
   public void function createTask( rc ) {
     rc.userList = homeservice.getUserList().userList;
     rc.taskStatus = homeservice.getTaskStatus().status;
+    rc.taskStatusList = homeservice.getTaskStatus().status;
   }
 
   public void function createUser( rc ) {
